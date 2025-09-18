@@ -9,10 +9,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+
+/**
+ * BaseTest class is responsible for initializing and quitting the Appium driver.
+ * All test classes should extend this class to reuse the setup and teardown logic.
+ */
 public class BaseTest {
 
     protected AndroidDriver driver;
 
+    /**
+     * This method runs before any test class.
+     * It sets up the Appium driver with desired capabilities and launches the SwagLabs app.
+     */
     @BeforeClass
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -26,6 +35,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
+    /**
+     * This method runs after all tests in the class.
+     * It closes the app and quits the driver session.
+     */
     @AfterClass
     public void tearDown() {
         if (driver != null) {

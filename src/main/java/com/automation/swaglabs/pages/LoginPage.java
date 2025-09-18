@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Page Object Model (POM) class for the Login screen.
+ * It contains locators and methods to interact with login-related UI elements.
+ */
 public class LoginPage {
 
     private AndroidDriver driver;
@@ -21,6 +25,9 @@ public class LoginPage {
     private final By errorMessageLocator = By.xpath("//android.view.ViewGroup[@content-desc='test-Error message']//android.widget.TextView");
 
 
+    /**
+     * Constructor initializes driver and WebDriverWait.
+     */
     public LoginPage(AndroidDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -66,6 +73,9 @@ public class LoginPage {
         getBiometryButton().click();
     }
 
+    /**
+     * Fetches the displayed error message after a failed login attempt.
+     */
     public String getErrorMessage() {
         try {
             return getErrorMessageElement().getText().trim();
@@ -75,6 +85,9 @@ public class LoginPage {
         }
     }
 
+    /**
+     * Performs login using provided credentials.
+     */
     public void login(String username, String password) {
         enterUsername(username);
         enterPassword(password);

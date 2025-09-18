@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Page Object Model (POM) class for the Logout process.
+ * Contains locators and methods to log out from the app.
+ */
 public class LogoutPage {
 
     private AndroidDriver driver;

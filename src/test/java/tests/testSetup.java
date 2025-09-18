@@ -8,7 +8,6 @@ public class testSetup extends BaseTest{
 
     @Test
     public static void info(){
-
         System.out.println("Hello this files has been pushed from the IJ IDE");
     }
 

@@ -7,8 +7,15 @@ import com.automation.swaglabs.pages.LogoutPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/**
+ * Test class for verifying login scenarios.
+ * Extends BaseTest to reuse driver setup/teardown.
+ */
 public class LoginTest extends BaseTest {
 
+    /**
+     * Test case: Login with valid credentials and then logout.
+     */
     @Test
     public void testLogin() {
         LoginPage loginPage = new LoginPage(driver);
@@ -26,6 +33,9 @@ public class LoginTest extends BaseTest {
         System.out.println("Logout Successful!");
     }
 
+    /**
+     * Test case: Try to login without entering username.
+     */
     @Test
     public void testLoginWithoutUsername() {
         LoginPage loginPage = new LoginPage(driver);
@@ -42,6 +52,9 @@ public class LoginTest extends BaseTest {
         System.out.println("=== Login Without Username Test Completed ===");
     }
 
+    /**
+     * Test case: Try to login without entering password.
+     */
     @Test
     public void testLoginWithoutPassword() {
         LoginPage loginPage = new LoginPage(driver);
@@ -58,6 +71,9 @@ public class LoginTest extends BaseTest {
         System.out.println("=== Login Without Password Test Completed ===");
     }
 
+    /**
+     * Test case: Try to login with invalid credentials.
+     */
     @Test
     public void testLoginWithInvalidCredentials() {
         LoginPage loginPage = new LoginPage(driver);
